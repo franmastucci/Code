@@ -1,0 +1,129 @@
+//Cada intérprete elige una de las tres lineas cuyas longitudes pueden corresponder con la tesitura del instrumento, 
+//rango dinámico, variación tímbrica etc... Los intérpretes ejecutan su instrumento cada vez que un círculo del color correspondiente 
+//con la linea que eligió cruza dicha linea. Los instrumentos armónicos pueden ejecutar acordes si dos o mas círculos cruzan su linea
+//paralelamente; este caso, lo intérpretes de  instrumentos monofónicos pueden considerarlo como una apoyatura.
+
+
+float desplazamiento=700; 
+float desplazamiento1=700; 
+float desplazamiento2=700; 
+float desplazamiento3=700; 
+float desplazamiento4=700; 
+float desplazamiento5=700;
+float desplazamiento6=700 ; 
+float desplazamiento7=700; 
+float desplazamiento8=700; 
+float desplazamiento9=700; 
+float desplazamiento10=700; 
+float desplazamiento11=700; 
+float desplazamiento12=700;
+float desplazamiento13=700 ; 
+float desplazamiento14=700; 
+float desplazamiento15=700; 
+float desplazamiento16=700; 
+float desplazamiento17=700; 
+float desplazamiento18=700; 
+float desplazamiento19=700;
+float desplazamiento20=700 ; 
+ void setup() {
+ size(800,480);
+   
+
+
+
+ }
+ void draw() {
+   background(100);   
+   
+   strokeWeight(0.7);
+   stroke(random(200),0,0);
+   line(200,0,200,400);
+   stroke(0,random(100),0);   
+   line(0,100,500,100);
+   stroke(0,0,random(150));
+   line(650,50,10,420);
+   noStroke();
+   fill(random(150),0,0);
+ ellipse(desplazamiento,25,25,25);
+ ellipse(desplazamiento1,75,25,25);
+  ellipse(desplazamiento2,125,25,25);
+   ellipse(desplazamiento3,175,25,25);
+    ellipse(desplazamiento4,225,25,25);
+     ellipse(desplazamiento5,275,25,25);
+      ellipse(desplazamiento6,325,25,25);
+      fill(0, random(100),0 );
+            ellipse(25,desplazamiento7,25,25);
+ ellipse(75,desplazamiento8,25,25);
+  ellipse(125,desplazamiento9,25,25);
+   ellipse(175,desplazamiento10,25,25);
+    ellipse(250,desplazamiento11,25,25);
+     ellipse(325,desplazamiento12,25,25);
+      ellipse(400,desplazamiento13,25,25);   
+      fill(0,0,random(200));
+        ellipse(desplazamiento7,desplazamiento7,25,25);
+ ellipse(desplazamiento8,desplazamiento9,25,25);
+  ellipse(desplazamiento9,desplazamiento8,25,25);
+   ellipse(desplazamiento10,desplazamiento11,25,25);
+    ellipse(desplazamiento11,desplazamiento10,25,25);
+     ellipse(desplazamiento12,desplazamiento13,25,25);
+      ellipse(desplazamiento13,desplazamiento12,25,25);   
+ desplazamiento = desplazamiento - 2;
+ desplazamiento1 = desplazamiento1 - 3;
+   desplazamiento2 = desplazamiento2 - 5.2;
+    desplazamiento3 = desplazamiento3 - 3.5;
+     desplazamiento4 = desplazamiento4 - 2.7;
+      desplazamiento5 = desplazamiento5 - 1.2;
+       desplazamiento6 = desplazamiento6 - 2.1;
+        desplazamiento7 = desplazamiento7 - 2;
+ desplazamiento8 = desplazamiento8 - 4;
+   desplazamiento9 = desplazamiento9 - 3.2;
+    desplazamiento10 = desplazamiento10 - 3.4;
+     desplazamiento11 = desplazamiento11 - 2.9;
+      desplazamiento12 = desplazamiento12 - 1.7;
+      desplazamiento13 = desplazamiento13 - 1.3;
+ while (desplazamiento < 0) {
+   desplazamiento = 700;
+ }
+ while (desplazamiento1 < 0) {
+   desplazamiento1 = 700;
+ }
+ while (desplazamiento2 < 0) {
+   desplazamiento2 = 700;
+ }
+  while (desplazamiento3 < 0) {
+   desplazamiento3 = 700;
+ }
+  while (desplazamiento4 < 0) {
+   desplazamiento4 = 700;
+ }
+  while (desplazamiento5 < 0) {
+   desplazamiento5 = 700;
+ }
+  while (desplazamiento5 < 0) {
+   desplazamiento5 = 700;
+ }
+  while (desplazamiento6 < 0) {
+   desplazamiento6 = 700;
+ }
+  while (desplazamiento7 < 0) {
+   desplazamiento7 = 700;
+ }
+ while (desplazamiento8 < 0) {
+   desplazamiento8 = 700;
+ }
+  while (desplazamiento9 < 0) {
+   desplazamiento9 = 700;
+ }
+  while (desplazamiento10 < 0) {
+   desplazamiento10 = 700;
+ }
+  while (desplazamiento11 < 0) {
+   desplazamiento11 = 700;
+ }
+  while (desplazamiento12 < 0) {
+   desplazamiento12 = 700;
+ }
+  while (desplazamiento13 < 0) {
+   desplazamiento13 = 700;
+ }
+ }
