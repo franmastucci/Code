@@ -1,0 +1,62 @@
+int csize = 50;
+int grow = 0;
+int n = 0;
+int csize1 = 50;
+int grow1 = 0;
+int n1 = 0;
+void setup() {
+
+
+size (500,400);
+smooth();
+strokeWeight(4);
+
+}
+
+void draw() {
+fill(random(255));
+  background(0);
+if ( n % 30 == 0) {
+    grow = 5;
+  }
+  if (csize > 70) {
+    csize = 20;
+    grow = -2;
+  }
+  if (csize < 7) {
+    csize = 7;
+    grow = 0;
+  }
+
+noStroke();
+  ellipse(50,130,csize,csize);
+  csize = csize + grow;
+  n = n + 1;
+
+if ( n1 % 11 == 0) {
+    grow1 = 5;
+  }
+  if (csize1 > 70) {
+    csize1 = 20;
+    grow1 = -2;
+  }
+  if (csize1 < 7) {
+    csize1 = 7;
+    grow1 = 0;
+  }
+
+noStroke();
+  ellipse(450,230,csize1,csize1);
+  csize1 = csize1 + grow1;
+  n1 = n1 + 1;
+
+noFill();
+stroke(random(250,0),random(250,0),random(250,0));
+float t = frameCount/1000.0;
+  for(int i = 0; i < 40; i ++) {
+bezier(width/2, height,
+width/2, random(i, t)*height, 
+random(i, t)*width-100, random(i,t)*height,
+random(i,t)*width-100, random(i,t)*height);
+
+}}
