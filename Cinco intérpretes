@@ -1,0 +1,56 @@
+//Código para cinco intérpretes:
+//Cada intérprete elige un color
+//Cada color establece dos lìmites en el eje x
+//El intérprete debe improvisar cada vez que la linea 
+//fluctuante cruce la linea recta orizontal.
+//Dentro del area correspondiente a cada color
+//cada intérprete debe considerar el eje x como el registro
+//y el eje y como la dinámica.
+
+
+float time = 0;
+
+void setup(){
+  size (1000,400);
+
+}
+
+void draw() {
+  strokeWeight(1);
+  stroke(random(1,200));
+  
+  line (200,height/3,0, height/3);
+
+  line (400,height/3, 200,height/3);
+  
+  line(1000, height/3, 400, height/3);
+  strokeWeight(2);  
+  noStroke();
+  fill(250,4);
+  rect(0,0, 200, height);
+  fill(0,20);
+  rect(200,0,400,height);
+  fill(0,200,250,2);
+  resetMatrix();
+  rect(400,0,600,height);
+  fill(#A50303,30);
+  rect(600,0,800,height);
+  fill(#AAA637,30);
+  rect(800,0,1000,height);
+  
+
+ float x = 0;
+
+   
+  while(x  < width ){
+ stroke(#99AA9C);  
+  
+    point ( x, height * noise(x/100, time));
+    x = x+ 0.5;
+  
+
+}
+  time = time+ (0.0062*1);
+
+
+  }
