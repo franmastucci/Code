@@ -1,0 +1,87 @@
+//Las tres lineas verticales se corresponden con un intérprete. 
+//Cada vez que un círculo cruza alguna de las lineas, debe tocar el intérprete correspondiente. 
+//Escribimos en orden las letras del teclado que afectan el programa: 'b' 'abajo' 'ctrl' 'arriba' 'izquierda' 'derecha`.
+
+
+
+
+float desplazamiento_1 = 1000;
+float desplazamiento_2 =1000;
+float desplazamiento_3 = 1000;
+float desplazamiento_4 = 1000;
+float desplazamiento_5 = 1000;
+float desplazamiento_6 = 1000;
+
+void setup(){
+  size(1000,600);
+
+  fill(250);
+  frameRate(100);
+  
+ }
+void draw(){
+
+  background(0);
+stroke(250);
+strokeWeight(random(5));
+line(width/2,0,width/2, height);
+line(width/3,0,width/3, height);
+line(width/5.9,0,width/5.9, height);
+resetMatrix();
+strokeWeight(random(12));
+fill(random(30));
+ellipse(desplazamiento_1,50,50,50);
+desplazamiento_1 = desplazamiento_1 - 8.5;
+fill(random(25));
+
+ellipse(desplazamiento_2,150,50,50);
+desplazamiento_2 = desplazamiento_2 - 9;
+fill(random(20));
+
+ellipse(desplazamiento_3,250,50,50);
+desplazamiento_3= desplazamiento_3 - 7.5;
+fill(random(15));
+ellipse(desplazamiento_4,350,50,50);
+desplazamiento_4 = desplazamiento_4 - 6.1;
+fill(random(10));
+
+ellipse(desplazamiento_5,450,50,50);
+desplazamiento_5= desplazamiento_5 - 5.5;
+fill(random(35));
+ellipse(desplazamiento_6,550,50,50);
+desplazamiento_6 = desplazamiento_6 - 9.1;
+
+  if (keyPressed) {
+    
+ if (key== 'b' || key == 'B') {
+desplazamiento_6 = 1000;    
+
+  
+  }
+}
+}
+void keyPressed() {
+  if ( key == CODED) {
+    if (keyCode == UP) {
+      
+desplazamiento_3 = 1000;
+  }
+  else if (keyCode == CONTROL) {
+desplazamiento_4 = 1000;    
+
+  }
+  else if (keyCode == RIGHT) {
+desplazamiento_1 = 1000;    
+
+  }
+  else if (keyCode == LEFT) {
+desplazamiento_2 = 1000;    
+
+  }
+  else if (keyCode == DOWN) {
+desplazamiento_5 = 1000;   
+  }
+
+}
+  
+}
