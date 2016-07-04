@@ -1,0 +1,104 @@
+//'Q' 'W' 'E' 'R' 'T' PARA LANZAR LOS CIRCULOS BLANCOS
+//'A' 'S' 'D' 'F' 'G' PARA LANZAR LOS CIRCULOS NEGROS
+
+
+
+
+
+float time = 0;
+float desplazamiento_1 = 1000;
+float desplazamiento_2 =1000;
+float desplazamiento_3 = 1000;
+float desplazamiento_4 = 1000;
+float desplazamiento_5 = 1000;
+float desplazamiento_6 = 1000;
+float desplazamiento_7 = 1000;
+float desplazamiento_8 =1000;
+float desplazamiento_9 = 1000;
+float desplazamiento_10 = 1000;
+float desplazamiento_11 = 1000;
+float desplazamiento_12 = 1000;
+void setup() {
+
+  size(1200,900);
+}
+void draw() {
+  background(255);
+  float x = 0;
+
+  while (x < width) {
+stroke(random(0,20));
+    line (x,height *noise(x/1000, time),x,height);
+    x = x + 1;
+  }
+  time = time + 0.002;
+  fill(random(30));
+ellipse(100,-desplazamiento_1,50,50);
+desplazamiento_1 = desplazamiento_1 - 85;
+fill(random(25));
+
+ellipse(200,-desplazamiento_2,50,50);
+desplazamiento_2 = desplazamiento_2 - 80;
+fill(random(20));
+
+ellipse(400,-desplazamiento_3,50,50);
+desplazamiento_3= desplazamiento_3 - 70;
+fill(random(15));
+ellipse(600,-desplazamiento_4,50,50);
+desplazamiento_4 = desplazamiento_4 - 61;
+fill(random(10));
+
+ellipse(800,-desplazamiento_5,50,50);
+desplazamiento_5= desplazamiento_5 - 55;
+fill(random(35));
+noStroke();
+fill(255);
+ellipse(50,desplazamiento_7,50,50);
+desplazamiento_7 = desplazamiento_7 - 85;
+fill(255);
+
+ellipse(250,desplazamiento_8,50,50);
+desplazamiento_8 = desplazamiento_8 - 80;
+
+
+ellipse(450,desplazamiento_9,50,50);
+desplazamiento_9= desplazamiento_9 - 50;
+ellipse(350,desplazamiento_4,50,50);
+desplazamiento_9 = desplazamiento_9 - 61;
+
+
+ellipse(650,desplazamiento_10,50,50);
+desplazamiento_10= desplazamiento_10 - 55;
+
+ellipse(850,desplazamiento_11,50,50);
+desplazamiento_11 = desplazamiento_11 - 70;
+  if (keyPressed) {
+    
+ if (key== 'b' || key == 'B') {
+desplazamiento_6 = 1000;   }
+ if (key== 'q' || key == 'Q') {
+desplazamiento_7 = 1000;   }
+ if (key== 'w' || key == 'W') {
+desplazamiento_8 = 1000;   }
+ if (key== 'e' || key == 'E') {
+desplazamiento_9 = 1000;   }
+ if (key== 'r' || key == 'R') {
+desplazamiento_10 = 1000;   }
+ if (key== 't' || key == 'T') {
+desplazamiento_11 = 1000;   }
+ if (key== 'b' || key == 'B') {
+desplazamiento_1 = 1000;   }
+ if (key== 'a' || key == 'A') {
+desplazamiento_2 = 1000;   }
+ if (key== 's' || key == 'S') {
+desplazamiento_3 = 1000;   }
+ if (key== 'd' || key == 'D') {
+desplazamiento_4 = 1000;   }
+ if (key== 'f' || key == 'F') {
+desplazamiento_5 = 1000;   }
+ if (key== 'g' || key == 'G') {
+desplazamiento_6 = 1000;   }
+  }
+ 
+
+}
