@@ -13,7 +13,7 @@ noFill();
   while(u < 100) {  
     x[u] = random(0, width);
     y[u] = random(0, height);
-    speed[u] = random(1, 5); //reemplazar por valor '1';
+    speed[u] = 1;
     u = u + 1;
 }}
 
