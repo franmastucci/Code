@@ -5,88 +5,55 @@ float[] speed = new float[100];
 
 void setup() {
 
-frameRate(57);
+frameRate(77);
 size (800,480);
 smooth();
 noFill();
- int u = 0;
-  while(u < 100) {  
-    x[u] = random(0, width);
-    y[u] = random(0, height);
-    speed[u] = 1;
-    u = u + 1;
-}}
+int u = 0;
+while(u < 100) {  
+     x[u] = random(0, width);
+     y[u] = random(0, height);
+     speed[u] = random(1, 5); //reemplazar por valor '1';
+     u = u + 1;
+ }}
+ 
+ void draw() {
 
-void draw() {
-background(#197B9D);
-fill(0);
-rect(0,0,width/2,height);
-float t = frameCount/10.0;
-  for(int i = 0; i < 30; i ++) {
-bezier(width*77, height/77,
-width/55, sin(i)*height, 
-sin( t)*width, sin(t)*height,
-sin(i)*width*88, sin(t)*height+222);
-  int u = 0;
-  while(u < 100) {
-    float co = map(speed[u], 1, 5, 100, 255);
-    stroke(co);
-    strokeWeight(speed[u]);
-    point(x[u], y[u]);
-  
-    x[u] = x[u] - speed[u] / 2;
-    if(x[u] < 0) {
-      x[u] = width;
-    }
-    u = u + 1;
-  }
-fill(random(200,0));
-noStroke();
-triangle(0,1,0,480,width/2*sin(100),480);
+   background(#197B9D);
+ fill(0);
+ rect(0,0,width/2,height);
+ float t = frameCount/10.0;
+   for(int i = 0; i < 30; i ++) {
+ bezier(width*77, height/77,
+ width/55, sin(i)*height, 
+ sin( t)*width, sin(t)*height,
+ sin(i)*width*88, sin(t)*height+222);
+   int u = 0;
+ while(u < 100) {
 
-noFill();
-stroke(0);
-strokeWeight(0.7);
+   float co = map(speed[u], 1, 5, 100, 255);
+     stroke(co);
+     strokeWeight(speed[u]);
+     point(x[u], y[u]);
+   
+     x[u] = x[u] - speed[u] / 2;
+     if(x[u] < 0) {
+ x[u] = width;
+     }
+     u = u + 1;
+   }
 
-bezier(width/2, height,
-width/2, noise(5,i, t)*height, 
-noise(200,i, t)*width/22, noise(130,i,t)*height/2,
-noise(400,i,t)*width/11, noise(500,i,t)*height/2);
-bezier(width/2, height,
-width/2, noise(1,i, t)*height, 
-noise(200,i, t)*width/33, noise(130,i,t)*height/18,
-noise(400,i,t)*width/44, noise(500,i,t)*height/18);bezier(width/2, height,
-width/2, noise(1,i, t)*height, 
-noise(200,i, t)*width/55, noise(130,i,t)*height/5,
-noise(400,i,t)*width/66, noise(500,i,t)*height/5);
+ fill(random(200,0));
+ noStroke();
+ triangle(0,1,0,480,width/2*sin(100),480);
+ 
+ noFill();
+ stroke(0);
+ strokeWeight(0.7);
+ 
+ bezier(width/2, height,
+ width/2, noise(5,i, t)*height, 
+ noise(200,i, t)*width/22, noise(130,i,t)*height/2,
+ noise(400,i,t)*width/11, noise(500,i,t)*height/2);
 
-bezier(width/6, height/7,
-width/6, noise(1,i, t)*height, 
-noise(200,i, t)*width, noise(130,i,t)*height,
-sin(i)*width*44, sin(t)*height/222);
-
-bezier(width/77, height/77,
-width/55, sin(i)*height, 
-sin( t)*width, sin(t)*height,
-sin(i)*width*88, sin(t)*height+222);
-
-bezier(width*77, 77,
-width/55, sin(i)*height, 
-sin( t)*width, sin(t)*height,
-sin(i)*width*88, sin(t)*height+222);
-
-bezier(width, height*4,
-width/2, noise(1,i, t)*height, 
-noise(200,i, t)*width/33, noise(130,i,t)*height/18,
-noise(400,i,t)*width*44, noise(500,i,t)*height/18);
-
-bezier(width/2, height*4,
-width/2, noise(1,i, t)*height, 
-noise(200,i, t)*width*33, noise(130,i,t)*height/18,
-noise(400,i,t)*width/44, noise(500,i,t)*height/18);
-stroke(255);
-bezier(width*2, height*4,
-width/2, noise(1,i, t)*height, 
-random(i, t)*width*33, noise(130,i,t)*height/18,
-noise(400,i,t)*width/44, noise(500,i,t)*height/18);
-}}
+ }}
