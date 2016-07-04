@@ -1,0 +1,40 @@
+float time = 0;
+float time1 = 0;
+float time2 =  0;
+void setup() {
+size(800,480);
+
+}
+void draw() {
+background(0);
+  stroke(200);
+  strokeWeight(3);
+
+
+
+
+
+float x = 0;
+
+while( x < width) {
+
+ 
+  
+
+ stroke(255);
+ strokeWeight(4);
+   line(x, 50 + 50 *sin(x/time2*0.1),x, 50 + 50 *sin(x/time2*0.1));//sin() between 0, 1
+   point(x, 160 + 50 *sin(x/time2*0.39));//sin() between 0, 1
+      point(x, 270 + 50 *sin(x/time2*0.57));//sin() between 0, 1
+        point(x, 380 + 50 *sin(x/time2*0.98));//sin() between 0, 1
+  x = x+ 22;
+}
+
+time1 = time1 + 0.001;
+time = time + 0.02;
+time2 = time2 + 0.0003;
+ while ( time > 2 ) {
+   time = time - random(20);
+
+ }
+}
