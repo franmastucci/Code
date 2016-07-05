@@ -1,0 +1,209 @@
+import themidibus.*;
+
+MidiBus myBus;
+
+// INDICACIONES PARA EL INTÉRPRETE/COMPOSITOR (I)
+// utilizar cuatro potenciómetros midi para deslizar los círculos sobre el [eje y] indicando las dinámicas
+
+//INDICACIONES PARA EL INTÉRPRETE/COMPOSITOR (II)
+//deslizar con el mouse los círculos ubicados a la iazquierda y disponerlos sobre el pentagrama, de manera que el círculo ubicado a la izquierda de la cuarta linea
+//se ubique primero en el eje orizontal, el circulo ubicado a la izquierda de la tercera linea debería ubicarse segundo cuando haya sido deslizado sobre el eje orizontal , etc...
+//Una vez ubicados los cuatro circulos el INTÉRPRETE/COMPOSITOR  debe utilizar las teclas del teclado para variar la ubicación de cada círculo:
+//[A-Z]--->primer círculo, [S-X]---> segundo círculo, [F-C]---> tercer circulo, [G-V]---> cuarto círculo
+
+//INDICACIONES PARA LOS INTPERPRETES/INSTRUMENTISTAS
+//Deben agruparse en cuatro grupos e interpretar el movimiento dinámico y melódico (con glisandos o escalonadamente) que la pantalla indica
+
+
+
+PImage foto1;
+PImage foto2;
+PImage foto3;
+PImage foto4;
+
+int x = 50;
+int y = 250;
+int sz = 50;
+int x1 = 50;
+int y1 = 190;
+int sz1 = 50;
+int x2 = 50;
+int y2 = 130;
+int sz2 = 50;
+int x3 = 50;
+int y3 = 70;
+int sz3 = 50;
+color bgcolor;
+
+void setup() {
+  size(800, 300);
+  colorMode(HSB);
+    MidiBus.list();
+  myBus = new MidiBus(this,1,0);
+  smooth();
+foto1 =  loadImage("piano.jpg");
+foto2 =    loadImage("mezzopiano.jpg");
+foto3 =       loadImage("mezzoforte.jpg");
+foto4 =         loadImage("forte.jpg");
+  
+  fill(255);
+
+}
+
+
+void draw() {
+  background(0);
+
+  stroke(255);
+  line(100,height-90, width-100, height-90);
+   image(foto1,width-70-10,height-50);
+     line(100,height-20, width-100, height-20);
+    image(foto2,width-86-10,height-120);
+         line(100,height-160, width-100, height-160);
+      image(foto3,width-75-10,height-200);
+           line(100,height-230, width-100, height-230);
+        image(foto4,width-70-10,height-280);
+               line(100,height-300, width, height-300);
+  if(dist(x,y, mouseX, mouseY) < sz / 2) {
+    cursor(HAND);
+    if(mousePressed) {
+      x = mouseX;
+      y = mouseY;
+      strokeWeight(5);
+    } else {
+      strokeWeight(2);
+    }
+    stroke(255);
+  } else {
+    cursor(ARROW);
+    noStroke();
+  }
+  
+    ellipse(x, y, sz, sz);
+
+  if(dist(x1,y1, mouseX, mouseY) < sz1 / 2) {
+    cursor(HAND);
+    if(mousePressed) {
+      x1 = mouseX;
+      y1 = mouseY;
+      strokeWeight(5);
+    } else {
+      strokeWeight(2);
+    }
+    stroke(255);
+  } else {
+    cursor(ARROW);
+    noStroke();
+  }
+  
+    ellipse(x1, y1, sz1, sz1);
+      if(dist(x2,y2, mouseX, mouseY) < sz2 / 2) {
+    cursor(HAND);
+    if(mousePressed) {
+      x2 = mouseX;
+      y2 = mouseY;
+      strokeWeight(5);
+    } else {
+      strokeWeight(2);
+    }
+    stroke(255);
+  } else {
+    cursor(ARROW);
+    noStroke();
+  }
+  
+    ellipse(x2, y2, sz2, sz1);
+      if(dist(x3,y3, mouseX, mouseY) < sz3 / 2) {
+    cursor(HAND);
+    if(mousePressed) {
+      x3 = mouseX;
+      y3 = mouseY;
+      strokeWeight(5);
+    } else {
+      strokeWeight(2);
+    }
+    stroke(255);
+  } else {
+    cursor(ARROW);
+    noStroke();
+  }
+  
+    ellipse(x3, y3, sz3, sz3);
+
+
+  if (keyPressed) {
+    
+ if (key== 'b' || key == 'B') {
+y = y+1;    
+ }}
+ 
+
+
+  if (keyPressed) {
+    
+ if (key== 'g' || key == 'G') {
+y = y-1;    
+ }}
+ 
+   if (keyPressed) {
+    
+ if (key== 'v' || key == 'V') {
+y = y+1;    
+ }}
+
+
+   if (keyPressed) {
+    
+ if (key== 'f' || key == 'F') {
+y1 = y1-2;    
+ }}
+
+  if (keyPressed) {
+    
+ if (key== 'c' || key == 'C') {
+y1 = y1+2;    
+ }}
+ 
+   if (keyPressed) {
+    
+ if (key== 's' || key == 'S') {
+y2 = y2-3;    
+ }}
+    if (keyPressed) {
+    
+ if (key== 'x' || key == 'X') {
+y2 = y2+3;    
+ }}
+     if (keyPressed) {
+    
+ if (key== 'z' || key == 'Z') {
+y3 = y3+4;    
+ }}
+     if (keyPressed) {
+    
+ if (key== 'a' || key == 'A') {
+y3 = y3-4;    
+ }}
+}
+
+
+
+void controllerChange(int channel, int number, int value){
+if (number == 75 ){
+  float y = map (100,value*10, 127,1, height/2);
+    ellipse(650, value*2, 50, 50);
+}
+if (number == 73 ) {
+    float y = map (100,value*10, 127,1, height/2);
+        ellipse(475, value*2, 50, 50);
+}
+if ( number == 71) {
+    float y = map (100,value*10, 127,1, height/2);  
+            ellipse(325, value*2, 50, 50);
+}
+if ( number==74) {
+      float y = map (100,value*10, 127,1, height/2);
+      
+                ellipse(175, value*2, 50, 50);
+}
+}
